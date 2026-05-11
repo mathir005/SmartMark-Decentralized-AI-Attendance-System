@@ -370,7 +370,7 @@ This project is licensed under the **MIT License** — see the LICENSE file for 
 
 ## 👤 Authors
 
-- **Mathiyarasu R** — Electronics Engineer, Embedded Systems Developer ([GitHub](https://github.com/mathiyarasu))
+- **Mathiyarasu R** — Electronics Engineer, Embedded Systems Developer ([GitHub](https://github.com/mathir005))
 
 ---
 
