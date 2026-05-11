@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Attendance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      font-family: 'Inter', sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    .container {
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      max-width: 450px;
+      width: 100%;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 12px;
+      border: 2px solid #2c3e50;
+      margin-bottom: 15px;
+    }
+
+    /* Unified style for buttons and button-like links */
+    button, .button-link {
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      width: 100%;
+      margin-bottom: 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    /* Style for the main submit button */
+    button {
+      background: #4CAF50;
+    }
+    button:hover:not(:disabled) {
+      background: #45a049;
+    }
+    button:disabled {
+        background: #cccccc;
+        cursor: not-allowed;
+    }
+
+    #status {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #333;
+      word-wrap: break-word;
+    }
+
+    .admin-button {
+      background: #007BFF;
+    }
+    .admin-button:hover {
+      background: #0056b3;
+    }
+    
+    .student-button {
+        background: #6f42c1; /* Purple color for student login */
+    }
+    .student-button:hover {
+        background: #5a3d9a;
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        padding: 15px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Smart Attendance</h2>
+
+  <div class="container">
+    <input type="text" id="roll" placeholder="🎓 Enter Roll Number">
+    <video id="video" autoplay playsinline></video>
+    <button id="submitBtn" onclick="submitAttendance()">📤 Submit Attendance</button>
+    
+    <a href="/student/login" class="button-link student-button">👤 Student Login</a>
+    
+    <a href="/admin" class="button-link admin-button">🔑 Go to Admin Panel</a>
+    <p id="status">Status: Waiting for input...</p>
+  </div>
+
+  <script>
+    const video = document.getElementById('video');
+    const status = document.getElementById('status');
+    const submitBtn = document.getElementById('submitBtn');
+
+    async function startCamera() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        video.srcObject = stream;
+        status.innerText = "✅ Camera ready!";
+      } catch (err) {
+        status.innerText = "❌ Camera error: " + err.message;
+        alert("Camera access is blocked! Make sure you allow permission and use HTTPS.");
+      }
+    }
+
+    async function submitAttendance() {
+      const roll = document.getElementById('roll').value.trim();
+      if (!roll) {
+        alert("⚠️ Please enter your roll number");
+        return;
+      }
+
+      // Disable button to prevent multiple submissions
+      submitBtn.disabled = true;
+      status.innerText = "⏳ Capturing image and getting location...";
+
+      try {
+        const canvas = document.createElement('canvas');
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        canvas.getContext('2d').drawImage(video, 0, 0);
+        const imageData = canvas.toDataURL('image/jpeg');
+        
+        const pos = await new Promise((resolve, reject) => {
+            navigator.geolocation.getCurrentPosition(resolve, reject);
+        });
+        
+        const gps = `${pos.coords.latitude},${pos.coords.longitude}`;
+        status.innerText = "Submitting attendance...";
+
+        const response = await fetch('/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ roll, image: imageData, gps })
+        });
+
+        // IMPROVED: Handle JSON response from the server
+        const result = await response.json();
+
+        if (response.ok) {
+            status.innerText = `✅ ${result.message}`;
+            alert(`Success: ${result.message}`);
+        } else {
+            status.innerText = `❌ ${result.error}`;
+            alert(`Error: ${result.error}`);
+        }
+
+      } catch (err) {
+        status.innerText = `❌ An error occurred: ${err.message}`;
+        alert(`Error: ${err.message}`);
+      } finally {
+        // Re-enable button after operation is complete
+        submitBtn.disabled = false;
+      }
+    }
+
+    startCamera();
+  </script>
+</body>
+
+</html>

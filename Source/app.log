@@ -1,0 +1,295 @@
+2025-09-05 10:25:39,495 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://192.168.42.39:5000
+2025-09-05 10:25:39,495 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-05 10:25:46,202 - ERROR - Exception on /admin [POST]
+Traceback (most recent call last):
+  File "C:\Users\cittu\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cittu\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cittu\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cittu\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Smart_Attendance_System\Source\main.py", line 213, in admin_login
+    user = verify_admin_credentials(username, password)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'verify_admin_credentials' is not defined
+2025-09-05 10:25:46,205 - INFO - 192.168.42.39 - - [05/Sep/2025 10:25:46] "[35m[1mPOST /admin HTTP/1.1[0m" 500 -
+2025-09-05 10:25:48,401 - INFO - 192.168.42.39 - - [05/Sep/2025 10:25:48] "GET / HTTP/1.1" 200 -
+2025-09-05 10:25:49,975 - INFO - 192.168.42.39 - - [05/Sep/2025 10:25:49] "GET /admin HTTP/1.1" 200 -
+2025-09-05 10:25:55,657 - ERROR - Exception on /admin [POST]
+Traceback (most recent call last):
+  File "C:\Users\cittu\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cittu\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cittu\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cittu\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Smart_Attendance_System\Source\main.py", line 213, in admin_login
+    user = verify_admin_credentials(username, password)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'verify_admin_credentials' is not defined
+2025-09-05 10:25:55,659 - INFO - 192.168.42.39 - - [05/Sep/2025 10:25:55] "[35m[1mPOST /admin HTTP/1.1[0m" 500 -
+2025-09-05 10:52:15,879 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://192.168.42.39:5000
+2025-09-05 10:52:15,907 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-05 10:52:17,111 - INFO - 192.168.42.39 - - [05/Sep/2025 10:52:17] "GET / HTTP/1.1" 200 -
+2025-09-05 10:52:20,404 - INFO - 192.168.42.39 - - [05/Sep/2025 10:52:20] "GET /admin HTTP/1.1" 200 -
+2025-09-05 10:52:26,155 - INFO - 192.168.42.39 - - [05/Sep/2025 10:52:26] "[32mPOST /admin HTTP/1.1[0m" 302 -
+2025-09-05 10:52:26,202 - INFO - 192.168.42.39 - - [05/Sep/2025 10:52:26] "GET /admin/panel HTTP/1.1" 200 -
+2025-09-05 10:52:49,425 - INFO - 192.168.42.39 - - [05/Sep/2025 10:52:49] "GET /admin/download HTTP/1.1" 200 -
+2025-09-05 10:52:59,389 - INFO - 192.168.42.39 - - [05/Sep/2025 10:52:59] "GET /admin/register HTTP/1.1" 200 -
+2025-09-05 10:53:03,863 - INFO - 192.168.42.39 - - [05/Sep/2025 10:53:03] "GET /admin/remove_student HTTP/1.1" 200 -
+2025-09-05 10:53:07,248 - INFO - 192.168.42.39 - - [05/Sep/2025 10:53:07] "GET /admin/view_attendance HTTP/1.1" 200 -
+2025-09-05 10:53:11,389 - INFO - 192.168.42.39 - - [05/Sep/2025 10:53:11] "GET /admin/panel HTTP/1.1" 200 -
+2025-09-05 10:53:13,209 - INFO - 192.168.42.39 - - [05/Sep/2025 10:53:13] "GET /admin/remove_student HTTP/1.1" 200 -
+2025-09-05 10:53:16,427 - INFO - 192.168.42.39 - - [05/Sep/2025 10:53:16] "POST /admin/remove_student HTTP/1.1" 200 -
+2025-09-05 10:53:17,881 - INFO - 192.168.42.39 - - [05/Sep/2025 10:53:17] "GET /admin/remove_student HTTP/1.1" 200 -
+2025-09-05 10:53:19,395 - INFO - 192.168.42.39 - - [05/Sep/2025 10:53:19] "GET /admin/panel HTTP/1.1" 200 -
+2025-09-05 10:53:22,944 - INFO - 192.168.42.39 - - [05/Sep/2025 10:53:22] "GET /admin/view_student_data HTTP/1.1" 200 -
+2025-09-05 10:53:24,701 - INFO - 192.168.42.39 - - [05/Sep/2025 10:53:24] "GET /admin/panel HTTP/1.1" 200 -
+2025-09-05 10:53:26,499 - INFO - 192.168.42.39 - - [05/Sep/2025 10:53:26] "[32mGET /admin/logout HTTP/1.1[0m" 302 -
+2025-09-05 10:53:26,510 - INFO - 192.168.42.39 - - [05/Sep/2025 10:53:26] "GET /admin HTTP/1.1" 200 -
+2025-09-05 10:53:32,559 - WARNING - Unauthorized access attempt to /admin/panel
+2025-09-05 10:53:32,559 - INFO - 192.168.42.39 - - [05/Sep/2025 10:53:32] "[32mGET /admin/panel HTTP/1.1[0m" 302 -
+2025-09-05 10:53:32,569 - INFO - 192.168.42.39 - - [05/Sep/2025 10:53:32] "GET /admin HTTP/1.1" 200 -
+2025-09-05 10:53:33,231 - INFO - 192.168.42.39 - - [05/Sep/2025 10:53:33] "GET /admin HTTP/1.1" 200 -
+2025-09-05 10:53:34,129 - INFO - 192.168.42.39 - - [05/Sep/2025 10:53:34] "GET / HTTP/1.1" 200 -
+2025-09-05 11:22:15,170 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.42.39:5000
+2025-09-05 11:22:15,221 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-05 11:22:15,227 - INFO -  * Restarting with stat
+2025-09-05 11:22:19,685 - WARNING -  * Debugger is active!
+2025-09-05 11:22:19,692 - INFO -  * Debugger PIN: 532-046-644
+2025-09-05 11:22:29,462 - INFO - 127.0.0.1 - - [05/Sep/2025 11:22:29] "GET / HTTP/1.1" 200 -
+2025-09-05 11:22:32,100 - INFO - 127.0.0.1 - - [05/Sep/2025 11:22:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-09-05 11:22:36,309 - INFO - 127.0.0.1 - - [05/Sep/2025 11:22:36] "GET /admin HTTP/1.1" 200 -
+2025-09-05 11:22:44,883 - INFO - Admin 'admin' logged in successfully.
+2025-09-05 11:22:44,885 - INFO - 127.0.0.1 - - [05/Sep/2025 11:22:44] "[32mPOST /admin HTTP/1.1[0m" 302 -
+2025-09-05 11:22:45,208 - INFO - 127.0.0.1 - - [05/Sep/2025 11:22:45] "GET /admin/panel HTTP/1.1" 200 -
+2025-09-05 11:29:29,991 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.42.39:5000
+2025-09-05 11:29:30,018 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-05 11:29:30,021 - INFO -  * Restarting with stat
+2025-09-05 11:29:32,718 - WARNING -  * Debugger is active!
+2025-09-05 11:29:32,724 - INFO -  * Debugger PIN: 532-046-644
+2025-09-05 11:29:57,361 - INFO - 127.0.0.1 - - [05/Sep/2025 11:29:57] "GET / HTTP/1.1" 200 -
+2025-09-05 11:30:01,162 - INFO - 127.0.0.1 - - [05/Sep/2025 11:30:01] "GET /admin HTTP/1.1" 200 -
+2025-09-05 11:30:02,834 - INFO - 127.0.0.1 - - [05/Sep/2025 11:30:02] "[32mPOST /admin HTTP/1.1[0m" 302 -
+2025-09-05 11:30:02,897 - INFO - 127.0.0.1 - - [05/Sep/2025 11:30:02] "[35m[1mGET /admin/panel HTTP/1.1[0m" 500 -
+2025-09-05 11:30:03,189 - INFO - 127.0.0.1 - - [05/Sep/2025 11:30:03] "GET /admin/panel?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-09-05 11:30:03,254 - INFO - 127.0.0.1 - - [05/Sep/2025 11:30:03] "GET /admin/panel?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-09-05 11:30:03,597 - INFO - 127.0.0.1 - - [05/Sep/2025 11:30:03] "GET /admin/panel?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-09-05 11:30:03,845 - INFO - 127.0.0.1 - - [05/Sep/2025 11:30:03] "[36mGET /admin/panel?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-09-05 11:32:08,443 - INFO -  * Detected change in 'e:\\Smart_Attendance_System2\\Source\\main.py', reloading
+2025-09-05 11:32:08,632 - INFO -  * Restarting with stat
+2025-09-05 11:32:11,663 - WARNING -  * Debugger is active!
+2025-09-05 11:32:11,669 - INFO -  * Debugger PIN: 532-046-644
+2025-09-05 11:32:26,154 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.42.39:5000
+2025-09-05 11:32:26,154 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-05 11:32:26,156 - INFO -  * Restarting with stat
+2025-09-05 11:32:29,002 - WARNING -  * Debugger is active!
+2025-09-05 11:32:29,009 - INFO -  * Debugger PIN: 532-046-644
+2025-09-05 11:32:34,171 - INFO - 127.0.0.1 - - [05/Sep/2025 11:32:34] "GET / HTTP/1.1" 200 -
+2025-09-05 11:32:38,459 - INFO - 127.0.0.1 - - [05/Sep/2025 11:32:38] "GET /admin HTTP/1.1" 200 -
+2025-09-05 11:32:39,961 - INFO - 127.0.0.1 - - [05/Sep/2025 11:32:39] "[32mPOST /admin HTTP/1.1[0m" 302 -
+2025-09-05 11:32:39,978 - INFO - 127.0.0.1 - - [05/Sep/2025 11:32:39] "GET /admin/panel HTTP/1.1" 200 -
+2025-09-05 11:32:48,615 - INFO - 127.0.0.1 - - [05/Sep/2025 11:32:48] "GET /admin/register HTTP/1.1" 200 -
+2025-09-05 11:33:04,186 - INFO - 127.0.0.1 - - [05/Sep/2025 11:33:04] "GET /admin/register HTTP/1.1" 200 -
+2025-09-05 11:33:22,305 - INFO - Student registered successfully: Roll=60
+2025-09-05 11:33:22,305 - INFO - 127.0.0.1 - - [05/Sep/2025 11:33:22] "POST /admin/register HTTP/1.1" 200 -
+2025-09-05 11:33:26,303 - INFO - 127.0.0.1 - - [05/Sep/2025 11:33:26] "GET /admin/register HTTP/1.1" 200 -
+2025-09-05 11:33:38,414 - INFO - 127.0.0.1 - - [05/Sep/2025 11:33:38] "POST /submit HTTP/1.1" 200 -
+2025-09-05 11:35:01,047 - INFO -  * Detected change in 'e:\\Smart_Attendance_System2\\Source\\main.py', reloading
+2025-09-05 11:35:01,255 - INFO -  * Restarting with stat
+2025-09-05 11:35:04,208 - WARNING -  * Debugger is active!
+2025-09-05 11:35:04,214 - INFO -  * Debugger PIN: 532-046-644
+2025-09-05 11:35:09,584 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.42.39:5000
+2025-09-05 11:35:09,585 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-05 11:35:09,587 - INFO -  * Restarting with stat
+2025-09-05 11:35:12,208 - WARNING -  * Debugger is active!
+2025-09-05 11:35:12,214 - INFO -  * Debugger PIN: 532-046-644
+2025-09-05 11:35:16,016 - INFO - 127.0.0.1 - - [05/Sep/2025 11:35:16] "GET / HTTP/1.1" 200 -
+2025-09-05 11:35:21,027 - INFO - 127.0.0.1 - - [05/Sep/2025 11:35:21] "POST /submit HTTP/1.1" 200 -
+2025-09-05 11:35:28,629 - INFO - 127.0.0.1 - - [05/Sep/2025 11:35:28] "GET /admin HTTP/1.1" 200 -
+2025-09-05 11:35:30,394 - INFO - 127.0.0.1 - - [05/Sep/2025 11:35:30] "[32mPOST /admin HTTP/1.1[0m" 302 -
+2025-09-05 11:35:30,453 - INFO - 127.0.0.1 - - [05/Sep/2025 11:35:30] "GET /admin/panel HTTP/1.1" 200 -
+2025-09-05 11:35:44,594 - INFO - 127.0.0.1 - - [05/Sep/2025 11:35:44] "[32mGET /admin/logout HTTP/1.1[0m" 302 -
+2025-09-05 11:35:44,702 - INFO - 127.0.0.1 - - [05/Sep/2025 11:35:44] "GET /admin HTTP/1.1" 200 -
+2025-09-05 11:35:46,264 - INFO - 127.0.0.1 - - [05/Sep/2025 11:35:46] "[32mPOST /admin HTTP/1.1[0m" 302 -
+2025-09-05 11:35:46,574 - INFO - 127.0.0.1 - - [05/Sep/2025 11:35:46] "GET /admin/panel HTTP/1.1" 200 -
+2025-09-05 11:35:53,698 - INFO - 127.0.0.1 - - [05/Sep/2025 11:35:53] "[32mGET /admin/logout HTTP/1.1[0m" 302 -
+2025-09-05 11:35:53,826 - INFO - 127.0.0.1 - - [05/Sep/2025 11:35:53] "GET /admin HTTP/1.1" 200 -
+2025-09-05 11:35:57,199 - INFO - 127.0.0.1 - - [05/Sep/2025 11:35:57] "[32mGET /admin/panel HTTP/1.1[0m" 302 -
+2025-09-05 11:35:57,508 - INFO - 127.0.0.1 - - [05/Sep/2025 11:35:57] "GET /admin HTTP/1.1" 200 -
+2025-09-05 11:36:06,001 - INFO - 127.0.0.1 - - [05/Sep/2025 11:36:06] "[32mGET /admin/panel HTTP/1.1[0m" 302 -
+2025-09-05 11:36:46,242 - INFO - 127.0.0.1 - - [05/Sep/2025 11:36:46] "POST /submit HTTP/1.1" 200 -
+2025-09-05 11:36:49,807 - INFO - 127.0.0.1 - - [05/Sep/2025 11:36:49] "GET /admin HTTP/1.1" 200 -
+2025-09-05 11:36:51,804 - INFO - 127.0.0.1 - - [05/Sep/2025 11:36:51] "[32mPOST /admin HTTP/1.1[0m" 302 -
+2025-09-05 11:36:51,820 - INFO - 127.0.0.1 - - [05/Sep/2025 11:36:51] "GET /admin/panel HTTP/1.1" 200 -
+2025-09-05 11:37:08,236 - INFO - 127.0.0.1 - - [05/Sep/2025 11:37:08] "GET /admin/register HTTP/1.1" 200 -
+2025-09-05 11:37:11,536 - INFO - 127.0.0.1 - - [05/Sep/2025 11:37:11] "GET /admin/remove_student HTTP/1.1" 200 -
+2025-09-05 11:37:14,484 - INFO - Successfully removed student with Roll: 60
+2025-09-05 11:37:14,485 - INFO - 127.0.0.1 - - [05/Sep/2025 11:37:14] "POST /admin/remove_student HTTP/1.1" 200 -
+2025-09-05 11:37:16,291 - INFO - 127.0.0.1 - - [05/Sep/2025 11:37:16] "GET /admin/panel HTTP/1.1" 200 -
+2025-09-05 11:37:17,602 - INFO - 127.0.0.1 - - [05/Sep/2025 11:37:17] "GET /admin/view_attendance HTTP/1.1" 200 -
+2025-09-05 11:37:19,352 - INFO - 127.0.0.1 - - [05/Sep/2025 11:37:19] "GET /admin/panel HTTP/1.1" 200 -
+2025-09-05 11:37:20,151 - INFO - 127.0.0.1 - - [05/Sep/2025 11:37:20] "GET /admin/analytics HTTP/1.1" 200 -
+2025-09-05 11:37:22,061 - INFO - 127.0.0.1 - - [05/Sep/2025 11:37:22] "GET /admin/panel HTTP/1.1" 200 -
+2025-09-05 11:37:23,096 - INFO - 127.0.0.1 - - [05/Sep/2025 11:37:23] "GET /admin/download HTTP/1.1" 200 -
+2025-09-05 11:37:31,008 - INFO - 127.0.0.1 - - [05/Sep/2025 11:37:31] "GET /admin/register HTTP/1.1" 200 -
+2025-09-05 11:37:38,569 - INFO - Student registered successfully: Roll=60
+2025-09-05 11:37:38,570 - INFO - 127.0.0.1 - - [05/Sep/2025 11:37:38] "POST /admin/register HTTP/1.1" 200 -
+2025-09-05 11:37:40,223 - INFO - 127.0.0.1 - - [05/Sep/2025 11:37:40] "GET /admin/register HTTP/1.1" 200 -
+2025-09-05 11:37:46,130 - INFO - 127.0.0.1 - - [05/Sep/2025 11:37:46] "GET /admin/panel HTTP/1.1" 200 -
+2025-09-05 11:37:46,654 - INFO - 127.0.0.1 - - [05/Sep/2025 11:37:46] "GET /admin/view_attendance HTTP/1.1" 200 -
+2025-09-05 11:37:47,355 - INFO - 127.0.0.1 - - [05/Sep/2025 11:37:47] "GET /admin/panel HTTP/1.1" 200 -
+2025-09-05 11:37:48,388 - INFO - 127.0.0.1 - - [05/Sep/2025 11:37:48] "GET /admin/remove_student HTTP/1.1" 200 -
+2025-09-05 11:37:48,865 - INFO - 127.0.0.1 - - [05/Sep/2025 11:37:48] "GET /admin/panel HTTP/1.1" 200 -
+2025-09-05 11:37:49,394 - INFO - 127.0.0.1 - - [05/Sep/2025 11:37:49] "GET /admin HTTP/1.1" 200 -
+2025-09-05 11:37:50,558 - INFO - 127.0.0.1 - - [05/Sep/2025 11:37:50] "GET /admin/panel HTTP/1.1" 200 -
+2025-09-05 11:37:58,591 - INFO - 127.0.0.1 - - [05/Sep/2025 11:37:58] "POST /submit HTTP/1.1" 200 -
+2025-09-05 11:38:02,447 - INFO - 127.0.0.1 - - [05/Sep/2025 11:38:02] "GET /admin HTTP/1.1" 200 -
+2025-09-05 11:38:03,983 - INFO - 127.0.0.1 - - [05/Sep/2025 11:38:03] "[32mPOST /admin HTTP/1.1[0m" 302 -
+2025-09-05 11:38:04,004 - INFO - 127.0.0.1 - - [05/Sep/2025 11:38:04] "GET /admin/panel HTTP/1.1" 200 -
+2025-09-05 11:38:10,624 - INFO - 127.0.0.1 - - [05/Sep/2025 11:38:10] "GET /admin/analytics HTTP/1.1" 200 -
+2025-09-05 11:38:20,507 - INFO - 127.0.0.1 - - [05/Sep/2025 11:38:20] "GET /admin/panel HTTP/1.1" 200 -
+2025-09-05 11:38:22,303 - INFO - 127.0.0.1 - - [05/Sep/2025 11:38:22] "GET /admin/view_attendance HTTP/1.1" 200 -
+2025-09-05 11:38:25,509 - INFO - 127.0.0.1 - - [05/Sep/2025 11:38:25] "GET /admin/panel HTTP/1.1" 200 -
+2025-09-05 11:38:29,559 - INFO - 127.0.0.1 - - [05/Sep/2025 11:38:29] "[32mGET /admin/logout HTTP/1.1[0m" 302 -
+2025-09-05 11:38:29,872 - INFO - 127.0.0.1 - - [05/Sep/2025 11:38:29] "GET /admin HTTP/1.1" 200 -
+2025-09-05 11:48:13,198 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.42.39:5000
+2025-09-05 11:48:13,211 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-05 11:48:13,214 - INFO -  * Restarting with stat
+2025-09-05 11:48:15,898 - WARNING -  * Debugger is active!
+2025-09-05 11:48:15,898 - INFO -  * Debugger PIN: 532-046-644
+2025-09-05 11:48:19,659 - INFO - 127.0.0.1 - - [05/Sep/2025 11:48:19] "GET / HTTP/1.1" 200 -
+2025-09-05 11:48:25,427 - INFO - 127.0.0.1 - - [05/Sep/2025 11:48:25] "POST /submit HTTP/1.1" 200 -
+2025-09-05 11:48:28,155 - INFO - 127.0.0.1 - - [05/Sep/2025 11:48:28] "GET /admin HTTP/1.1" 200 -
+2025-09-05 11:48:29,699 - INFO - 127.0.0.1 - - [05/Sep/2025 11:48:29] "POST /admin HTTP/1.1" 200 -
+2025-09-05 11:48:31,594 - INFO - 127.0.0.1 - - [05/Sep/2025 11:48:31] "POST /admin HTTP/1.1" 200 -
+2025-09-05 11:48:35,364 - INFO - 127.0.0.1 - - [05/Sep/2025 11:48:35] "POST /admin HTTP/1.1" 200 -
+2025-09-05 11:49:22,223 - INFO -  * Detected change in 'e:\\Smart_Attendance_System2\\Source\\main.py', reloading
+2025-09-05 11:49:22,399 - INFO -  * Restarting with stat
+2025-09-05 11:49:24,960 - WARNING -  * Debugger is active!
+2025-09-05 11:49:24,964 - INFO -  * Debugger PIN: 532-046-644
+2025-09-05 11:49:38,523 - INFO - 127.0.0.1 - - [05/Sep/2025 11:49:38] "POST /admin HTTP/1.1" 200 -
+2025-09-05 11:49:49,832 - INFO - 127.0.0.1 - - [05/Sep/2025 11:49:49] "GET / HTTP/1.1" 200 -
+2025-09-05 11:49:52,389 - INFO - 127.0.0.1 - - [05/Sep/2025 11:49:52] "GET /admin HTTP/1.1" 200 -
+2025-09-05 11:49:53,732 - INFO - 127.0.0.1 - - [05/Sep/2025 11:49:53] "POST /admin HTTP/1.1" 200 -
+2025-09-05 11:49:54,792 - INFO - 127.0.0.1 - - [05/Sep/2025 11:49:54] "POST /admin HTTP/1.1" 200 -
+2025-09-05 11:55:31,698 - INFO -  * Detected change in 'e:\\Smart_Attendance_System2\\Source\\main.py', reloading
+2025-09-05 11:55:31,983 - INFO -  * Restarting with stat
+2025-09-05 11:55:34,876 - INFO - Background scheduler started.
+2025-09-05 11:55:34,880 - INFO - Starting Smart Attendance System server...
+2025-09-05 11:55:34,887 - WARNING -  * Debugger is active!
+2025-09-05 11:55:34,894 - INFO -  * Debugger PIN: 532-046-644
+2025-09-05 11:55:45,609 - INFO - Background scheduler started.
+2025-09-05 11:55:45,611 - INFO - Starting Smart Attendance System server...
+2025-09-05 11:55:45,621 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.42.39:5000
+2025-09-05 11:55:45,621 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-05 11:55:45,621 - INFO -  * Restarting with stat
+2025-09-05 11:55:49,033 - INFO - Background scheduler started.
+2025-09-05 11:55:49,036 - INFO - Starting Smart Attendance System server...
+2025-09-05 11:55:49,041 - WARNING -  * Debugger is active!
+2025-09-05 11:55:49,048 - INFO -  * Debugger PIN: 532-046-644
+2025-09-05 11:55:55,956 - INFO - 127.0.0.1 - - [05/Sep/2025 11:55:55] "GET / HTTP/1.1" 200 -
+2025-09-05 11:55:58,586 - INFO - 127.0.0.1 - - [05/Sep/2025 11:55:58] "GET /admin HTTP/1.1" 200 -
+2025-09-05 11:56:00,613 - INFO - Admin login attempt from IP: 127.0.0.1
+2025-09-05 11:56:00,615 - INFO - Submitted Username: 'admin'
+2025-09-05 11:56:00,615 - INFO - Expected Username:  'admin'
+2025-09-05 11:56:00,615 - WARNING - Credentials for 'admin' MISMATCHED. Returning to login page.
+2025-09-05 11:56:00,616 - INFO - 127.0.0.1 - - [05/Sep/2025 11:56:00] "POST /admin HTTP/1.1" 200 -
+2025-09-05 11:57:35,575 - INFO - Admin login attempt from IP: 127.0.0.1
+2025-09-05 11:57:35,575 - INFO - Submitted Username: 'admin'
+2025-09-05 11:57:35,575 - INFO - Expected Username:  'admin'
+2025-09-05 11:57:35,575 - WARNING - Credentials for 'admin' MISMATCHED. Returning to login page.
+2025-09-05 11:57:35,603 - INFO - 127.0.0.1 - - [05/Sep/2025 11:57:35] "POST /admin HTTP/1.1" 200 -
+2025-09-05 11:58:31,943 - INFO - Admin login attempt from IP: 127.0.0.1
+2025-09-05 11:58:31,943 - INFO - Submitted Username: 'admin'
+2025-09-05 11:58:31,943 - INFO - Expected Username:  'admin'
+2025-09-05 11:58:31,943 - WARNING - Credentials for 'admin' MISMATCHED. Returning to login page.
+2025-09-05 11:58:31,944 - INFO - 127.0.0.1 - - [05/Sep/2025 11:58:31] "POST /admin HTTP/1.1" 200 -
+2025-09-05 11:58:32,792 - INFO - Admin login attempt from IP: 127.0.0.1
+2025-09-05 11:58:32,794 - INFO - Submitted Username: 'admin'
+2025-09-05 11:58:32,794 - INFO - Expected Username:  'admin'
+2025-09-05 11:58:32,794 - WARNING - Credentials for 'admin' MISMATCHED. Returning to login page.
+2025-09-05 11:58:32,794 - INFO - 127.0.0.1 - - [05/Sep/2025 11:58:32] "POST /admin HTTP/1.1" 200 -
+2025-09-05 11:58:40,632 - INFO - Background scheduler started.
+2025-09-05 11:58:40,634 - INFO - Starting Smart Attendance System server...
+2025-09-05 11:58:40,645 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.42.39:5000
+2025-09-05 11:58:40,645 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-05 11:58:40,648 - INFO -  * Restarting with stat
+2025-09-05 11:58:43,477 - INFO - Background scheduler started.
+2025-09-05 11:58:43,480 - INFO - Starting Smart Attendance System server...
+2025-09-05 11:58:43,486 - WARNING -  * Debugger is active!
+2025-09-05 11:58:43,491 - INFO -  * Debugger PIN: 532-046-644
+2025-09-05 11:58:44,378 - INFO - Admin login attempt from IP: 127.0.0.1
+2025-09-05 11:58:44,378 - INFO - Submitted Username: 'admin'
+2025-09-05 11:58:44,378 - INFO - Expected Username:  'admin'
+2025-09-05 11:58:44,378 - INFO - Credentials for 'admin' VERIFIED. Logging in.
+2025-09-05 11:58:44,378 - INFO - 127.0.0.1 - - [05/Sep/2025 11:58:44] "[32mPOST /admin HTTP/1.1[0m" 302 -
+2025-09-05 11:58:44,462 - INFO - 127.0.0.1 - - [05/Sep/2025 11:58:44] "[35m[1mGET /admin/panel HTTP/1.1[0m" 500 -
+2025-09-05 11:58:44,713 - INFO - 127.0.0.1 - - [05/Sep/2025 11:58:44] "[36mGET /admin/panel?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-09-05 11:58:44,807 - INFO - 127.0.0.1 - - [05/Sep/2025 11:58:44] "[36mGET /admin/panel?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-09-05 11:58:45,128 - INFO - 127.0.0.1 - - [05/Sep/2025 11:58:45] "[36mGET /admin/panel?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-09-05 12:00:03,888 - INFO -  * Detected change in 'e:\\Smart_Attendance_System2\\Source\\main.py', reloading
+2025-09-05 12:00:04,057 - INFO -  * Restarting with stat
+2025-09-05 12:00:06,686 - INFO - Background scheduler started.
+2025-09-05 12:00:06,691 - INFO - Starting Smart Attendance System server...
+2025-09-05 12:00:06,691 - WARNING -  * Debugger is active!
+2025-09-05 12:00:06,701 - INFO -  * Debugger PIN: 532-046-644
+2025-09-05 12:00:20,416 - INFO - Background scheduler started.
+2025-09-05 12:00:20,427 - INFO - Starting Smart Attendance System server...
+2025-09-05 12:00:20,435 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.42.39:5000
+2025-09-05 12:00:20,435 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-05 12:00:20,438 - INFO -  * Restarting with stat
+2025-09-05 12:00:23,421 - INFO - Background scheduler started.
+2025-09-05 12:00:23,423 - INFO - Starting Smart Attendance System server...
+2025-09-05 12:00:23,430 - WARNING -  * Debugger is active!
+2025-09-05 12:00:23,436 - INFO -  * Debugger PIN: 532-046-644
+2025-09-05 12:00:24,416 - INFO - 127.0.0.1 - - [05/Sep/2025 12:00:24] "[35m[1mGET /admin/panel HTTP/1.1[0m" 500 -
+2025-09-05 12:00:24,574 - INFO - 127.0.0.1 - - [05/Sep/2025 12:00:24] "[36mGET /admin/panel?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-09-05 12:00:24,637 - INFO - 127.0.0.1 - - [05/Sep/2025 12:00:24] "[36mGET /admin/panel?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-09-05 12:00:24,969 - INFO - 127.0.0.1 - - [05/Sep/2025 12:00:24] "[36mGET /admin/panel?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-09-05 12:00:25,214 - INFO - 127.0.0.1 - - [05/Sep/2025 12:00:25] "[36mGET /admin/panel?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-09-05 12:04:52,894 - INFO -  * Detected change in 'e:\\Smart_Attendance_System2\\Source\\main.py', reloading
+2025-09-05 12:04:53,168 - INFO -  * Restarting with stat
+2025-09-05 12:07:49,223 - INFO -  * Restarting with stat

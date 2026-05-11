@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+{% block title %}Attendance Analytics{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Attendance Analytics</h1>
+    <a href="{{ url_for('admin_panel') }}" class="btn btn-secondary">Back to Dashboard</a>
+</div>
+
+{% if error %}
+    <div class="alert alert-warning">{{ error }}</div>
+{% elif analytics_data %}
+    <p>This report shows each student's overall attendance percentage. Students with less than 75% attendance are flagged as "At Risk".</p>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Roll Number</th>
+                <th>Student Name</th>
+                <th>Total Sessions Present</th>
+                <th>Attendance Percentage</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in analytics_data %}
+            <tr class="{{ 'table-danger' if student.at_risk else '' }}">
+                <td>{{ student.roll }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.present_count }}</td>
+                <td>{{ student.percentage }}%</td>
+                <td>
+                    {% if student.at_risk %}
+                        <span class="badge bg-danger">At Risk</span>
+                    {% else %}
+                        <span class="badge bg-success">Good Standing</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <div class="alert alert-info">No analytics data to display.</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,130 @@
+{% extends 'layout.html' %}
+{% block title %}Application Settings{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Application Settings</h1>
+    <a href="{{ url_for('admin_panel') }}" class="btn btn-secondary">Back to Dashboard</a>
+</div>
+
+{% if success_message %}
+<div class="alert alert-warning">
+    <strong>{{ success_message }}</strong>
+    <p>Configuration is loaded into memory at startup. Your changes have been saved to <code>config.json</code>, but the running application will not use them until it is restarted.</p>
+</div>
+{% endif %}
+
+<form method="post">
+    <div class="card mb-4">
+        <div class="card-header">Admin Credentials</div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="admin_username" class="form-label">Admin Username</label>
+                    <input type="text" class="form-control" id="admin_username" name="admin_username" value="{{ config.admin_username }}">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="admin_password" class="form-label">Admin Password</label>
+                    <input type="password" class="form-control" id="admin_password" name="admin_password" value="{{ config.admin_password }}">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">Campus Geofence Settings</div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label for="geo_lat" class="form-label">Latitude</label>
+                    <input type="text" class="form-control" id="geo_lat" name="geo_lat" value="{{ config.campus_geofence[0] }}">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="geo_lon" class="form-label">Longitude</label>
+                    <input type="text" class="form-control" id="geo_lon" name="geo_lon" value="{{ config.campus_geofence[1] }}">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="allowed_radius" class="form-label">Allowed Radius (in meters)</label>
+                    <input type="number" class="form-control" id="allowed_radius" name="allowed_radius" value="{{ config.allowed_radius }}">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">Session Times</div>
+        <div class="card-body">
+            <div id="session-list">
+                {% for name, hour in config.session_times %}
+                <div class="row align-items-center session-item mb-2">
+                    <div class="col-md-5">
+                        <input type="text" class="form-control" name="session_name[]" placeholder="Session Name (e.g., Session 1)" value="{{ name }}">
+                    </div>
+                    <div class="col-md-5">
+                        <input type="number" class="form-control" name="session_hour[]" placeholder="Hour (24-hour format)" value="{{ hour }}">
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-danger btn-sm" onclick="removeSession(this)">Remove</button>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <button type="button" class="btn btn-success mt-2" onclick="addSession()">Add Session</button>
+        </div>
+    </div>
+  
+
+    <div class="card mb-4">
+        <div class="card-header">Email Report Settings</div>
+        <div class="card-body">
+            <div class="form-group mb-4">
+                <h5>Email Report Settings</h5>
+                
+                <div class="mb-3">
+                    <label>Daily Report Time:</label>
+                    <input type="time" class="form-control" name="report_time" 
+                           value="{{ config.email_report.time }}" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label>Report Days:</label><br>
+                    {% set days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] %}
+                    {% for day in range(7) %}
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" 
+                               name="report_days[]" value="{{ day }}"
+                               {{ 'checked' if day in config.email_report.days }}>
+                        <label class="form-check-label">{{ days[day] }}</label>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-lg">Save All Settings</button>
+</form>
+
+<script>
+    function addSession() {
+        const list = document.getElementById('session-list');
+        const newItem = document.createElement('div');
+        newItem.className = 'row align-items-center session-item mb-2';
+        newItem.innerHTML = `
+            <div class="col-md-5">
+                <input type="text" class="form-control" name="session_name[]" placeholder="Session Name">
+            </div>
+            <div class="col-md-5">
+                <input type="number" class="form-control" name="session_hour[]" placeholder="Hour (24-hour format)">
+            </div>
+            <div class="col-md-2">
+                <button type="button" class="btn btn-danger btn-sm" onclick="removeSession(this)">Remove</button>
+            </div>
+        `;
+        list.appendChild(newItem);
+    }
+
+    function removeSession(button) {
+        button.closest('.session-item').remove();
+    }
+</script>
+{% endblock %}

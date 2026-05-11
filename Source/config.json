@@ -1,0 +1,49 @@
+{
+  "admin_username": "admin",
+  "admin_password": "admin",
+  "campus_geofence": [
+    10.869828266872473,
+    76.92645397136471
+  ],
+  "allowed_radius": 500,
+  "session_times": [
+    [
+      "Session 1",
+      9
+    ],
+    [
+      "Session 2",
+      10
+    ],
+    [
+      "Session 3",
+      11
+    ],
+    [
+      "Session 4",
+      12
+    ],
+    [
+      "Session 5",
+      13
+    ],
+    [
+      "Session 6",
+      14
+    ],
+    [
+      "Session 7",
+      15
+    ]
+  ],
+  "email_report": {
+    "time": "16:00",
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

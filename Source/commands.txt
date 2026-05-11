@@ -1,0 +1,2 @@
+taskkill /f /im excel.exe /im python.exe /im cmd.exe
+taskkill /f /im excel.exe

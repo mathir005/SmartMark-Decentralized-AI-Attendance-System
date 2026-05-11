@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+{% block title %}My Attendance{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">My Attendance Dashboard</h1>
+    
+</div>
+<h4>Welcome, Roll Number: {{ roll_no }}</h4>
+
+<div class="row my-4">
+    <div class="col-md-6">
+        <div class="card text-center">
+            <div class="card-header">Total Sessions Present</div>
+            <div class="card-body">
+                <h1 class="display-4">{{ present_count }}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card text-center">
+            <div class="card-header">Overall Attendance Percentage</div>
+            <div class="card-body">
+                <h1 class="display-4">{{ attendance_percentage }}%</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3>My Attendance Log</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Date & Time</th>
+            <th>Session</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for record in records %}
+        <tr>
+            <td>{{ record.timestamp }}</td>
+            <td>{{ record.session }}</td>
+            <td><span class="badge bg-success">{{ record.status }}</span></td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="3" class="text-center">No attendance records found.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
